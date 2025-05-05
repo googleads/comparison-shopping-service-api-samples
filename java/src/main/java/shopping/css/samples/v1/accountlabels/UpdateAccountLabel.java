@@ -30,7 +30,7 @@ public class UpdateAccountLabel {
     return String.format("accounts/%s/labels/%s", accountId, labelId);
   }
 
-  // [START update_account_label]
+  // [START merchantapi_css_update_account_label]
   public static void updateAccountLabel(Config config, String labelId) throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
 
@@ -63,8 +63,6 @@ public class UpdateAccountLabel {
     }
   }
 
-  // [END update_account_label]
-
   public static void main(String[] args) throws Exception {
     final Config config = Config.load();
     // The ID of the AccountLabel to be updated
@@ -72,4 +70,5 @@ public class UpdateAccountLabel {
 
     updateAccountLabel(config, labelId);
   }
+  // [END merchantapi_css_update_account_label]
 }

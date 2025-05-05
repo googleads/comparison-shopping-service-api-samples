@@ -32,7 +32,7 @@ public class UpdateLabelsCssAccount {
     return String.format("accounts/%s", domainId);
   }
 
-  // [START update_labels_css_account]
+  // [START merchantapi_css_update_labels_css_account]
   public static void updateLabelsCssAccount(Config config, List<Long> labelIds) throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
 
@@ -58,8 +58,6 @@ public class UpdateLabelsCssAccount {
     }
   }
 
-  // [END update_labels_css_account]
-
   public static void main(String[] args) throws Exception {
     final Config config = Config.load();
     // The AccountLabel IDs to be assigned to the CSS account. Leave the list empty to delete all
@@ -68,4 +66,5 @@ public class UpdateLabelsCssAccount {
 
     updateLabelsCssAccount(config, labelIds);
   }
+  // [END merchantapi_css_update_labels_css_account]
 }

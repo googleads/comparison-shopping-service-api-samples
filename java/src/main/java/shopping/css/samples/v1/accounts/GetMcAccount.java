@@ -30,7 +30,7 @@ public class GetMcAccount {
     return String.format("accounts/%s", accountId);
   }
 
-  // [START get_mc_account]
+  // [START merchantapi_css_get_mc_account]
   public static void getMcAccount(Config config) throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
 
@@ -57,11 +57,10 @@ public class GetMcAccount {
     }
   }
 
-  // [END get_mc_account]
-
   public static void main(String[] args) throws Exception {
     final Config config = Config.load();
 
     getMcAccount(config);
   }
+  // [END merchantapi_css_get_mc_account]
 }

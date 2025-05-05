@@ -28,7 +28,7 @@ import shopping.css.samples.utils.Config;
 /** This class demonstrates how to delete a CSS Product */
 public class DeleteCssProductInput {
 
-  // [START delete_css_product_input]
+  // [START merchantapi_css_delete_css_product_input]
   public static void deleteCssProductInput(Config config, String productId) throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
 
@@ -60,8 +60,6 @@ public class DeleteCssProductInput {
     }
   }
 
-  // [END delete_css_product_input]
-
   public static void main(String[] args) throws Exception {
     final Config config = Config.load();
 
@@ -81,4 +79,5 @@ public class DeleteCssProductInput {
           });
     }
   }
+  // [END merchantapi_css_delete_css_product_input]
 }

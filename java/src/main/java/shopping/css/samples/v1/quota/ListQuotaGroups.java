@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,54 +12,49 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package shopping.css.samples.v1.cssproducts;
+package shopping.css.samples.v1.quota;
 
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.shopping.css.v1.CssProduct;
-import com.google.shopping.css.v1.CssProductsServiceClient;
-import com.google.shopping.css.v1.CssProductsServiceClient.ListCssProductsPagedResponse;
-import com.google.shopping.css.v1.CssProductsServiceSettings;
-import com.google.shopping.css.v1.ListCssProductsRequest;
+import com.google.shopping.css.v1.ListQuotaGroupsRequest;
+import com.google.shopping.css.v1.QuotaGroup;
+import com.google.shopping.css.v1.QuotaServiceClient;
+import com.google.shopping.css.v1.QuotaServiceClient.ListQuotaGroupsPagedResponse;
+import com.google.shopping.css.v1.QuotaServiceSettings;
 import shopping.css.samples.utils.Authenticator;
 import shopping.css.samples.utils.Config;
 
-/** This class demonstrates how to list CSS Products for a given Account */
-public class ListCssProducts {
+/** This class demonstrates how to list quota groups for a given Account */
+public class ListQuotaGroups {
 
   private static String getParent(String domainId) {
     return String.format("accounts/%s", domainId);
   }
 
-  private static String getName(String domainId, String productId) {
-    return String.format("accounts/%s/cssProducts/%s", domainId, productId);
-  }
-
-  // [START merchantapi_css_list_css_products]
-  public static void listCssProducts(Config config) throws Exception {
+  // [START merchantapi_css_list_quota_groups]
+  public static void listQuotaGroups(Config config) throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
 
-    CssProductsServiceSettings cssProductsServiceSettings =
-        CssProductsServiceSettings.newBuilder()
+    QuotaServiceSettings quotaServiceSettings =
+        QuotaServiceSettings.newBuilder()
             .setCredentialsProvider(FixedCredentialsProvider.create(credential))
             .build();
 
     String parent = getParent(config.getDomainId().toString());
 
-    try (CssProductsServiceClient cssProductsServiceClient =
-        CssProductsServiceClient.create(cssProductsServiceSettings)) {
+    try (QuotaServiceClient quotaServiceClient = QuotaServiceClient.create(quotaServiceSettings)) {
 
-      ListCssProductsRequest request =
-          ListCssProductsRequest.newBuilder().setParent(parent).build();
+      ListQuotaGroupsRequest request =
+          ListQuotaGroupsRequest.newBuilder().setParent(parent).build();
 
-      System.out.println("Sending ListCssProducts request");
-      ListCssProductsPagedResponse response = cssProductsServiceClient.listCssProducts(request);
-      System.out.println("Retrieved CssProduct Names: ");
+      System.out.println("Sending ListQuotaGroups request");
+      ListQuotaGroupsPagedResponse response = quotaServiceClient.listQuotaGroups(request);
+      System.out.println("Retrieved QuotaGroups: ");
 
       int count = 0;
 
       // Iterates over all rows in all pages and prints the element in each row
-      for (CssProduct element : response.iterateAll()) {
+      for (QuotaGroup element : response.iterateAll()) {
         System.out.println(element);
         count++;
       }
@@ -73,7 +68,7 @@ public class ListCssProducts {
   public static void main(String[] args) throws Exception {
     final Config config = Config.load();
 
-    listCssProducts(config);
+    listQuotaGroups(config);
   }
-  // [END merchantapi_css_list_css_products]
+  // [END merchantapi_css_list_quota_groups]
 }

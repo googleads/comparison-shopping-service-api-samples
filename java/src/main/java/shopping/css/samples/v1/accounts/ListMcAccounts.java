@@ -31,7 +31,7 @@ public class ListMcAccounts {
     return String.format("accounts/%s", accountId);
   }
 
-  // [START list_mc_accounts]
+  // [START merchantapi_css_list_mc_accounts]
   public static void listMcAccounts(Config config) throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
 
@@ -66,11 +66,10 @@ public class ListMcAccounts {
     }
   }
 
-  // [END list_mc_accounts]
-
   public static void main(String[] args) throws Exception {
     final Config config = Config.load();
 
     listMcAccounts(config);
   }
+  // [END merchantapi_css_list_mc_accounts]
 }

@@ -32,7 +32,7 @@ public class UpdateLabelsMcAccount {
     return String.format("accounts/%s", domainId);
   }
 
-  // [START update_labels_mc_account]
+  // [START merchantapi_css_update_labels_mc_account]
   public static void updateLabelsMcAccount(Config config, List<Long> labelIds) throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
 
@@ -63,8 +63,6 @@ public class UpdateLabelsMcAccount {
     }
   }
 
-  // [END update_labels_mc_account]
-
   public static void main(String[] args) throws Exception {
     final Config config = Config.load();
     // The AccountLabel IDs to be assigned to the MC account. Leave the list empty to delete all
@@ -73,4 +71,5 @@ public class UpdateLabelsMcAccount {
 
     updateLabelsMcAccount(config, labelIds);
   }
+  // [END merchantapi_css_update_labels_mc_account]
 }

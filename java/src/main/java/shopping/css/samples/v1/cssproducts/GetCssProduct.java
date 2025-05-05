@@ -34,7 +34,7 @@ public class GetCssProduct {
     return String.format("accounts/%s/cssProducts/%s", domainId, productId);
   }
 
-  // [START get_css_product]
+  // [START merchantapi_css_get_css_product]
   public static void getCssProduct(Config config, String productId) throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
 
@@ -59,11 +59,10 @@ public class GetCssProduct {
     }
   }
 
-  // [END get_css_product]
-
   public static void main(String[] args) throws Exception {
     final Config config = Config.load();
 
     getCssProduct(config, "it~IT~12345");
   }
+  // [END merchantapi_css_get_css_product]
 }

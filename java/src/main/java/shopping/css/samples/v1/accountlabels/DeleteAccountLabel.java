@@ -29,7 +29,7 @@ public class DeleteAccountLabel {
     return String.format("accounts/%s/labels/%s", accountId, labelId);
   }
 
-  // [START delete_account_label]
+  // [START merchantapi_css_delete_account_label]
   public static void deleteAccountLabel(Config config, String labelId) throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
 
@@ -54,8 +54,6 @@ public class DeleteAccountLabel {
     }
   }
 
-  // [END delete_account_label]
-
   public static void main(String[] args) throws Exception {
     final Config config = Config.load();
     // The ID of the AccountLabel to be deleted
@@ -63,4 +61,5 @@ public class DeleteAccountLabel {
 
     deleteAccountLabel(config, labelId);
   }
+  // [END merchantapi_css_delete_account_label]
 }

@@ -36,7 +36,7 @@ public class InsertCssProductInput {
     return String.format("accounts/%s/cssProductInputs/%s", domainId, productId);
   }
 
-  // [START insert_css_product_input]
+  // [START merchantapi_css_insert_css_product_input]
   public static void insertCssProductInput(Config config, long feedId, String rawProvidedId)
       throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
@@ -86,8 +86,6 @@ public class InsertCssProductInput {
     }
   }
 
-  // [END insert_css_product]
-
   public static void main(String[] args) throws Exception {
     final Config config = Config.load();
     // The ID uniquely identifying each feed
@@ -108,4 +106,5 @@ public class InsertCssProductInput {
           });
     }
   }
+  // [END merchantapi_css_insert_css_product_input]
 }

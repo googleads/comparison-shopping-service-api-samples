@@ -33,7 +33,7 @@ public class ListCssAccounts {
     return String.format("accounts/%s", accountId);
   }
 
-  // [START list_css_accounts]
+  // [START merchantapi_css_list_css_accounts]
   public static void listCssAccounts(Config config) throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
 
@@ -68,11 +68,10 @@ public class ListCssAccounts {
     }
   }
 
-  // [END list_css_accounts]
-
   public static void main(String[] args) throws Exception {
     final Config config = Config.load();
 
     listCssAccounts(config);
   }
+  // [END merchantapi_css_list_css_accounts]
 }

@@ -31,7 +31,7 @@ public class ListAccountLabels {
     return String.format("accounts/%s", domainId);
   }
 
-  // [START list_account_label]
+  // [START merchantapi_css_list_account_label]
   public static void listAccountLabels(Config config) throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
 
@@ -66,11 +66,10 @@ public class ListAccountLabels {
     }
   }
 
-  // [END list_account_label]
-
   public static void main(String[] args) throws Exception {
     final Config config = Config.load();
 
     listAccountLabels(config);
   }
+  // [END merchantapi_css_list_account_label]
 }

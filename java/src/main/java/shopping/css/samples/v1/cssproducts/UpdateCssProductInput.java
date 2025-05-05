@@ -31,7 +31,7 @@ public class UpdateCssProductInput {
     return String.format("accounts/%s/cssProductInputs/%s", domainId, productId);
   }
 
-  // [START update_css_product_input]
+  // [START merchantapi_css_update_css_product_input]
   public static void updateCssProductInput(Config config, String productId) throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
     String name = getName(config.getDomainId().toString(), productId);
@@ -70,8 +70,6 @@ public class UpdateCssProductInput {
     }
   }
 
-  // [END update_css_product]
-
   public static void main(String[] args) throws Exception {
     final Config config = Config.load();
 
@@ -80,4 +78,5 @@ public class UpdateCssProductInput {
     final String productId = "de~DE~rawProvidedId17";
     updateCssProductInput(config, productId);
   }
+  // [END merchantapi_css_update_css_product_input]
 }

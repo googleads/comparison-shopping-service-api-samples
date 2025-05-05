@@ -30,7 +30,7 @@ public class GetCssAccount {
     return String.format("accounts/%s", domainId);
   }
 
-  // [START get_css_account]
+  // [START merchantapi_css_get_css_account]
   public static void getCssAccount(Config config) throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
 
@@ -55,11 +55,10 @@ public class GetCssAccount {
     }
   }
 
-  // [END get_css_account]
-
   public static void main(String[] args) throws Exception {
     final Config config = Config.load();
 
     getCssAccount(config);
   }
+  // [END merchantapi_css_get_css_account]
 }

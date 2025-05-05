@@ -30,7 +30,7 @@ public class CreateAccountLabel {
     return String.format("accounts/%s", domainId);
   }
 
-  // [START create_account_label]
+  // [START merchantapi_css_create_account_label]
   public static void createAccountLabel(Config config) throws Exception {
     GoogleCredentials credential = new Authenticator().authenticate();
 
@@ -63,11 +63,10 @@ public class CreateAccountLabel {
     }
   }
 
-  // [END create_account_label]
-
   public static void main(String[] args) throws Exception {
     final Config config = Config.load();
 
     createAccountLabel(config);
   }
+  // [END merchantapi_css_create_account_label]
 }
